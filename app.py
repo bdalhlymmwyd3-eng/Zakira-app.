@@ -68,9 +68,9 @@ if 'profile_pic' not in st.session_state:
 if not st.session_state.logged_in:
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
-        st.image("https://image.pollinations.ai/prompt/A%20futuristic%20glossy%203D%20app%20icon%20with%20letters%20Z%20and%20plus%20sign%20on%20a%20deep%20space%20nebula%20background,%20high%20quality,%20vibrant%20colors?width=512&height=512&nologo=true", use_container_width=True)
-        st.markdown("<h1 style='text-align: center;'>مرحباً بك في ذاكرة+</h1>", unsafe_app=True)
-        st.markdown("<p style='text-align: center; color: #94a3b8;'>منصتك الذكية للتعلم المتطور</p>", unsafe_app=True)
+        st.image("https://image.pollinations.ai/prompt/A%20futuristic%20glossy%203D%20app%20icon%20with%20bold%20letters%20Z%2B%20on%20a%20deep%20space%20nebula%20background,%20high%20quality,%20vibrant%20colors?width=512&height=512&nologo=true", use_container_width=True)
+        st.markdown("<h1 style='text-align: center;'>مرحباً بك في ذاكرة+</h1>", unsafe_allow_html=True)
+        st.markdown("<p style='text-align: center; color: #94a3b8;'>منصتك الذكية للتعلم المتطور</p>", unsafe_allow_html=True)
         
         st.markdown("---")
         st.subheader("📝 تسجيل بيانات الطالب")
@@ -122,7 +122,6 @@ with st.sidebar:
     st.write("✅ الطالب ملتزم بالمنهج الدراسي المحدد.")
 
 # 3. الواجهة الرئيسية بعد الدخول
-# عرض معلومات الطالب ومن سجل
 st.sidebar.markdown("---")
 st.sidebar.success(f"👤 الطالب المسجل: {data['name']} {data['father']}\n\n📚 المنهج: {data['curriculum']}")
 
@@ -138,7 +137,7 @@ else:
 
 st.markdown("---")
 
-# خانة "ضع ملفك" لاختيار الطالب الملف الذي يريده
+# خانة "ضع ملفك"
 st.header(f"📁 {upload_text}")
 uploaded_file = st.file_uploader("", type=["pdf"])
 
@@ -206,4 +205,4 @@ with tabs[3]:
     if st.button("🚀 بدء المحادثة التفاعلية"):
         st.success("🎙️ الجلسة الصوتية قيد التشغيل...")
         st.audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3")
-    
+        
